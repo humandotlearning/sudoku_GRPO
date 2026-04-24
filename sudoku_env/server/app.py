@@ -8,7 +8,7 @@ except Exception as exc:  # pragma: no cover
 try:
     from ..models import SudokuAction, SudokuObservation
     from .sudoku_environment import SudokuEnvironment
-except ModuleNotFoundError:  # pragma: no cover - Docker/root import fallback
+except ImportError:  # pragma: no cover - Docker/root import fallback
     from models import SudokuAction, SudokuObservation
     from server.sudoku_environment import SudokuEnvironment
 

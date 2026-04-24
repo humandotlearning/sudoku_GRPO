@@ -5,9 +5,9 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .env
+.env.local
 outputs/
 runs/
 sudoku_env/outputs/
 sudoku_env/*.egg-info/
 sudoku_env/.venv/
-
