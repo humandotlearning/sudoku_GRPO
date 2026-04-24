@@ -81,6 +81,8 @@ def train_sudoku_grpo(
     max_seq_length: int = 4096,
     max_completion_length: int = 512,
     lora_rank: int = 32,
+    trackio_space_id: str = "Humanlearning/trackio",
+    trackio_project: str = "sudoku-grpo",
 ) -> dict[str, str | int]:
     import torch
     import transformers.utils.hub as transformers_hub
@@ -102,13 +104,12 @@ def train_sudoku_grpo(
     if not hf_token:
         raise RuntimeError("HF_TOKEN is missing from the Modal secret sudoku-grpo-secrets.")
 
-    trackio_space_id = os.environ.get("TRACKIO_SPACE_ID")
     if not trackio_space_id:
         user = whoami(token=hf_token)["name"]
         trackio_space_id = f"{user}/sudoku-trackio"
-        os.environ["TRACKIO_SPACE_ID"] = trackio_space_id
 
-    os.environ.setdefault("TRACKIO_PROJECT", "sudoku-grpo")
+    os.environ["TRACKIO_SPACE_ID"] = trackio_space_id
+    os.environ["TRACKIO_PROJECT"] = trackio_project
 
     package_url = f"git+https://huggingface.co/spaces/{env_repo_id}"
     subprocess.check_call(
@@ -118,7 +119,7 @@ def train_sudoku_grpo(
     from sudoku_env import SudokuAction, SudokuEnv
 
     env_url = f"https://{env_repo_id.replace('/', '-')}.hf.space"
-    run_name = f"gemma4-e2b-sudoku-smoke-{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')}"
+    run_name = f"gemma4-e2b-sudoku-long-{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')}"
     output_dir = RUNS_DIR / run_name
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -272,6 +273,7 @@ def train_sudoku_grpo(
         "output_repo_id": output_repo_id,
         "env_repo_id": env_repo_id,
         "trackio_space_id": trackio_space_id,
+        "trackio_project": trackio_project,
         "max_steps": max_steps,
         "max_completion_length": max_completion_length,
     }
@@ -285,6 +287,8 @@ def main(
     difficulty: int = 40,
     dataset_size: int = 128,
     max_completion_length: int = 512,
+    trackio_space_id: str = "Humanlearning/trackio",
+    trackio_project: str = "sudoku-grpo",
 ) -> None:
     from huggingface_hub import whoami
 
@@ -303,6 +307,8 @@ def main(
         difficulty=difficulty,
         dataset_size=dataset_size,
         max_completion_length=max_completion_length,
+        trackio_space_id=trackio_space_id,
+        trackio_project=trackio_project,
     )
     print(f"Spawned Modal training call: {call.object_id}")
     print(f"Environment Space: https://huggingface.co/spaces/{env_repo_id}")
