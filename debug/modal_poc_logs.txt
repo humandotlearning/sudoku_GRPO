@@ -1,0 +1,192 @@
+2026-04-24 16:17:30+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+2026-04-24 16:17:35+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR /root/modal_train_sudoku_grpo.py:99: UserWarning: WARNING: Unsloth should be imported before [trl, transformers, peft] to ensure all optimizations are applied. Your code may run slower or encounter memory issues without these optimizations.
+2026-04-24 16:17:35+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:17:35+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Please restructure your imports with 'import unsloth' at the top of your file.
+2026-04-24 16:17:35+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   from unsloth import FastVisionModel
+2026-04-24 16:17:35+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+2026-04-24 16:17:41+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Unsloth: Your Flash Attention 2 installation seems to be broken. Using Xformers instead. No performance changes will be seen.
+2026-04-24 16:17:41+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 🦥 Unsloth Zoo will now patch everything to make training faster!
+2026-04-24 16:17:43+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Using Python 3.11.5 environment at: /usr/local
+2026-04-24 16:17:43+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR    Updating https://huggingface.co/spaces/Humanlearning/sudoku-openenv (HEAD)
+2026-04-24 16:17:43+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR     Updated https://huggingface.co/spaces/Humanlearning/sudoku-openenv (af3ad062bd40f84e020ca66272dcc606a17b9398)
+2026-04-24 16:17:43+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Resolved 1 package in 524ms
+2026-04-24 16:17:43+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR    Building openenv-sudoku-env @ git+https://huggingface.co/spaces/Humanlearning/sudoku-openenv@af3ad062bd40f84e020ca66272dcc606a17b9398
+2026-04-24 16:17:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR       Built openenv-sudoku-env @ git+https://huggingface.co/spaces/Humanlearning/sudoku-openenv@af3ad062bd40f84e020ca66272dcc606a17b9398
+2026-04-24 16:17:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Prepared 1 package in 787ms
+2026-04-24 16:17:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Installed 1 package in 4ms
+2026-04-24 16:17:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR  + openenv-sudoku-env==0.1.0 (from git+https://huggingface.co/spaces/Humanlearning/sudoku-openenv@af3ad062bd40f84e020ca66272dcc606a17b9398)
+2026-04-24 16:17:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR CUDA available: True
+2026-04-24 16:17:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Environment URL: https://Humanlearning-sudoku-openenv.hf.space
+2026-04-24 16:17:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Trackio Space: humanlearning/sudoku-trackio
+2026-04-24 16:17:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Output repo: Humanlearning/gemma4-e2b-sudoku-grpo-lora
+2026-04-24 16:17:47+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR ==((====))==  Unsloth 2026.4.8: Fast Gemma4 patching. Transformers: 5.5.0.
+2026-04-24 16:17:47+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR    \\   /|    NVIDIA L40S. Num GPUs = 1. Max memory: 44.392 GB. Platform: Linux.
+2026-04-24 16:17:47+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR O^O/ \_/ \    Torch: 2.10.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.6.0
+2026-04-24 16:17:47+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR \        /    Bfloat16 = TRUE. FA [Xformers = None. FA2 = False]
+2026-04-24 16:17:47+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR  "-____-"     Free license: http://github.com/unslothai/unsloth
+2026-04-24 16:17:47+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+2026-04-24 16:17:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Unsloth: QLoRA and full finetuning all not selected. Switching to 16bit LoRA.
+2026-04-24 16:18:31+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:18:31+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:31+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights:   0%|          | 0/2011 [00:00<?, ?it/s]
+2026-04-24 16:18:31+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:31+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights:  12%|█▏        | 249/2011 [00:00<00:00, 2480.75it/s]
+2026-04-24 16:18:31+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:31+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights:  25%|██▍       | 498/2011 [00:00<00:00, 2452.05it/s]
+2026-04-24 16:18:31+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+Loading weights:  37%|███▋      | 746/2011 [00:00<00:00, 2456.28it/s]
+2026-04-24 16:18:32+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:18:32+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+Loading weights:  49%|████▉     | 992/2011 [00:01<00:02, 487.20it/s] 
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights:  57%|█████▋    | 1150/2011 [00:01<00:01, 525.05it/s]
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights:  63%|██████▎   | 1275/2011 [00:01<00:01, 545.48it/s]
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights:  69%|██████▊   | 1379/2011 [00:01<00:01, 588.57it/s]
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights:  82%|████████▏ | 1653/2011 [00:02<00:00, 906.03it/s]
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights:  96%|█████████▌| 1927/2011 [00:02<00:00, 1225.68it/s]
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:33+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Loading weights: 100%|██████████| 2011/2011 [00:02<00:00, 900.86it/s] 
+2026-04-24 16:18:48+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [unsloth_zoo.log|WARNING]Unsloth: Failed to register input-embedding hook for `model.base_model.model.model.audio_tower`: `get_input_embeddings` not auto‑handled for Gemma4AudioModel; please override in the subclass.. Falling back to pre-forward hook.
+2026-04-24 16:18:49+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR /root/modal_train_sudoku_grpo.py:258: UserWarning: You are using 'environment_factory', which is an experimental feature. This API may change or be removed at any time without prior notice. Silence this warning by setting environment variable TRL_EXPERIMENTAL_SILENCE=1.
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   trainer = GRPOTrainer(
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [accelerate.utils.other|WARNING][RANK 0] Detected kernel version 4.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': 2}.
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR ==((====))==  Unsloth - 2x faster free finetuning | Num GPUs used = 1
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR    \\   /|    Num examples = 2 | Num Epochs = 1 | Total steps = 1
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR O^O/ \_/ \    Batch size per device = 1 | Gradient accumulation steps = 2
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR \        /    Data Parallel GPUs = 1 | Total batch size (1 x 2 x 1) = 2
+2026-04-24 16:18:50+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR  "-____-"     Trainable parameters = 62,078,976 of 5,185,256,992 (1.20% trained)
+2026-04-24 16:18:52+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR * Trackio project initialized: huggingface
+2026-04-24 16:18:52+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR * Trackio metrics will be synced to Hugging Face Bucket: https://huggingface.co/buckets/Humanlearning/trackio-bucket
+2026-04-24 16:18:52+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR * Found existing space: [1m[38;5;208mhttps://huggingface.co/spaces/Humanlearning/trackio[0m
+2026-04-24 16:18:54+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR * Created new run: gemma4-e2b-sudoku-smoke-20260424-104744
+2026-04-24 16:18:54+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:18:54+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:18:54+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   0%|          | 0/1 [00:00<?, ?it/s]Passing `generation_config` together with generation-related arguments=({'pad_token_id'}) is deprecated and will be removed in future versions. Please pass either a `generation_config` object OR all generation parameters explicitly, but not both.
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Caching is incompatible with gradient checkpointing in Gemma4TextDecoderLayer. Setting `past_key_values=None`.
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 100%|██████████| 1/1 [00:50<00:00, 50.87s/it]
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR                                              
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR {'loss': '0', 'grad_norm': '0', 'learning_rate': '0', 'num_tokens': '1094', 'completions/mean_length': '128', 'completions/min_length': '128', 'completions/max_length': '128', 'completions/clipped_ratio': '1', 'completions/mean_terminated_length': '0', 'completions/min_terminated_length': '0', 'completions/max_terminated_length': '0', 'tools/call_frequency': '1', 'tools/failure_frequency': '0', 'rewards/sudoku_reward/mean': '0.2', 'rewards/sudoku_reward/std': '0', 'reward': '0.2', 'reward_std': '0', 'frac_reward_zero_std': '1', 'entropy': '0', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '50.72', 'epoch': '0.5'}
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:19:44+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+100%|██████████| 1/1 [00:50<00:00, 50.87s/it]
+2026-04-24 16:19:45+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Unsloth: Restored added_tokens_decoder metadata in /runs/gemma4-e2b-sudoku-smoke-20260424-104744/checkpoint-1/tokenizer_config.json.
+2026-04-24 16:19:49+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Unsloth: Restored added_tokens_decoder metadata in /runs/gemma4-e2b-sudoku-smoke-20260424-104744/tokenizer_config.json.
+2026-04-24 16:19:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:19:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:19:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR                                              
+2026-04-24 16:19:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR {'train_runtime': '60.05', 'train_samples_per_second': '0.033', 'train_steps_per_second': '0.017', 'train_loss': '0', 'epoch': '0.5'}
+2026-04-24 16:19:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:19:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:19:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR * Run finished. Uploading logs to the remote Trackio server (please wait...)
+2026-04-24 16:19:51+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+100%|██████████| 1/1 [00:57<00:00, 50.87s/it]
+2026-04-24 16:19:52+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:19:52+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:19:52+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 100%|██████████| 1/1 [00:57<00:00, 57.99s/it]
+2026-04-24 16:19:59+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:19:59+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Processing Files (0 / 0)      : |          |  0.00B /  0.00B            
+2026-04-24 16:19:59+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:19:59+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:19:59+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+New Data Upload               : |          |  0.00B /  0.00B            [A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...-104744/training_args.bin: 100%|██████████| 7.25kB / 7.25kB            [A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...424-104744/tokenizer.json: 100%|██████████| 32.2MB / 32.2MB            [A[A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...adapter_model.safetensors: 100%|██████████|  124MB /  124MB            [A[A[A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...-104744/training_args.bin: 100%|██████████| 7.25kB / 7.25kB            [A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...424-104744/tokenizer.json: 100%|██████████| 32.2MB / 32.2MB            [A[A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...adapter_model.safetensors: 100%|██████████|  124MB /  124MB            [A[A[A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Processing Files (3 / 3)      : 100%|██████████|  156MB /  156MB,   ???B/s  
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...-104744/training_args.bin: 100%|██████████| 7.25kB / 7.25kB            [A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...424-104744/tokenizer.json: 100%|██████████| 32.2MB / 32.2MB            [A[A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...adapter_model.safetensors: 100%|██████████|  124MB /  124MB            [A[A[A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...-104744/training_args.bin: 100%|██████████| 7.25kB / 7.25kB            [A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...424-104744/tokenizer.json: 100%|██████████| 32.2MB / 32.2MB            [A[A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...adapter_model.safetensors: 100%|██████████|  124MB /  124MB            [A[A[A[A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR Processing Files (3 / 3)      : 100%|██████████|  156MB /  156MB,  0.00B/s  
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR New Data Upload               : |          |  0.00B /  0.00B,  0.00B/s  
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...-104744/training_args.bin: 100%|██████████| 7.25kB / 7.25kB            
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...424-104744/tokenizer.json: 100%|██████████| 32.2MB / 32.2MB            
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR 
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [1A
+2026-04-24 16:20:00+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR   ...adapter_model.safetensors: 100%|██████████|  124MB /  124MB            
+2026-04-24 16:20:09+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [modal-client] 2026-04-24T10:50:09+0000 Detected 1 background thread(s) [ThreadPoolExecutor-1_0] still running after container exit. This will prevent runner shutdown for up to 30 seconds.
+2026-04-24 16:20:09+05:30 fc-01KPZHKPV2HNRANSSN4F27KXCR [modal-client|WARNING]Detected 1 background thread(s) [ThreadPoolExecutor-1_0] still running after container exit. This will prevent runner shutdown for up to 30 seconds.

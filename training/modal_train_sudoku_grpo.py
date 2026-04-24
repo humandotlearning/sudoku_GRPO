@@ -24,10 +24,10 @@ def _training_image() -> modal.Image:
             add_python="3.11",
         )
         .apt_install("git", "build-essential", "curl")
-        .pip_install(
-            "torch>=2.8.0",
+        .uv_pip_install(
+            "torch==2.10.0",
             "triton>=3.4.0",
-            "torchvision",
+            "torchvision==0.25.0",
             "bitsandbytes",
             "accelerate",
             "datasets",
@@ -36,14 +36,25 @@ def _training_image() -> modal.Image:
             "pillow",
             "timm",
             "tokenizers",
-            "trackio",
+            "trackio>=0.25.0",
             "transformers>=5.5.0",
             "trl>=0.28.0",
             "openenv-core[core]>=0.2.3",
         )
-        .pip_install(
+        .uv_pip_install(
             "unsloth_zoo[base] @ git+https://github.com/unslothai/unsloth-zoo",
             "unsloth[base] @ git+https://github.com/unslothai/unsloth",
+        )
+        .uv_pip_install("pydantic==2.10.6")
+        .uv_pip_install(
+            "mergekit",
+            "immutables==0.21",
+            extra_options="--no-deps",
+        )
+        .uv_pip_install("llm-blender", "weave")
+        .uv_pip_install("trl>=0.28.0", "transformers>=5.5.0", "jmespath")
+        .run_commands(
+            "python -c \"import os, torch; import transformers.utils.hub as hub; hub.TRANSFORMERS_CACHE = getattr(hub, 'TRANSFORMERS_CACHE', os.path.join(os.path.expanduser('~'), '.cache', 'huggingface', 'hub')); from trl import GRPOConfig, GRPOTrainer; from openenv.core import EnvClient; print('trainer import ok', torch.__version__)\""
         )
     )
 
@@ -68,11 +79,22 @@ def train_sudoku_grpo(
     dataset_size: int = 128,
     model_name: str = "unsloth/gemma-4-E2B-it",
     max_seq_length: int = 4096,
+    max_completion_length: int = 512,
     lora_rank: int = 32,
 ) -> dict[str, str | int]:
     import torch
+    import transformers.utils.hub as transformers_hub
     from datasets import Dataset
     from huggingface_hub import whoami
+
+    if not hasattr(transformers_hub, "TRANSFORMERS_CACHE"):
+        transformers_hub.TRANSFORMERS_CACHE = os.path.join(
+            os.path.expanduser("~"),
+            ".cache",
+            "huggingface",
+            "hub",
+        )
+
     from trl import GRPOConfig, GRPOTrainer
     from unsloth import FastVisionModel
 
@@ -89,7 +111,9 @@ def train_sudoku_grpo(
     os.environ.setdefault("TRACKIO_PROJECT", "sudoku-grpo")
 
     package_url = f"git+https://huggingface.co/spaces/{env_repo_id}"
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package_url])
+    subprocess.check_call(
+        ["/.uv/uv", "pip", "install", "--python", sys.executable, "--no-deps", package_url]
+    )
 
     from sudoku_env import SudokuAction, SudokuEnv
 
@@ -214,7 +238,7 @@ def train_sudoku_grpo(
         per_device_train_batch_size=1,
         gradient_accumulation_steps=2,
         num_generations=2,
-        max_completion_length=max_seq_length,
+        max_completion_length=max_completion_length,
         max_steps=max_steps,
         save_steps=max(10, max_steps),
         report_to="trackio",
@@ -249,6 +273,7 @@ def train_sudoku_grpo(
         "env_repo_id": env_repo_id,
         "trackio_space_id": trackio_space_id,
         "max_steps": max_steps,
+        "max_completion_length": max_completion_length,
     }
 
 
@@ -259,6 +284,7 @@ def main(
     max_steps: int = 20,
     difficulty: int = 40,
     dataset_size: int = 128,
+    max_completion_length: int = 512,
 ) -> None:
     from huggingface_hub import whoami
 
@@ -276,8 +302,8 @@ def main(
         max_steps=max_steps,
         difficulty=difficulty,
         dataset_size=dataset_size,
+        max_completion_length=max_completion_length,
     )
     print(f"Spawned Modal training call: {call.object_id}")
     print(f"Environment Space: https://huggingface.co/spaces/{env_repo_id}")
     print(f"Output model repo: https://huggingface.co/{output_repo_id}")
-
