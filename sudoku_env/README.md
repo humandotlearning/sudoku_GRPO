@@ -4,6 +4,7 @@ emoji: 🎮
 colorFrom: blue
 colorTo: green
 sdk: docker
+app_port: 8000
 pinned: false
 tags:
   - openenv
@@ -47,4 +48,3 @@ with SudokuEnv(base_url="http://localhost:8000").sync() as env:
     print(result.observation.message)
     result = env.step(SudokuAction(row=0, col=0, number=1))
 ```
-
