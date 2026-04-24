@@ -1,0 +1,12 @@
+[project]
+name = "sudoku-grpo-workspace"
+version = "0.1.0"
+description = "Sudoku OpenEnv and Modal GRPO training workspace"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["sudoku_env"]
+testpaths = ["tests"]
+addopts = "-q"
+

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+outputs/
+runs/
+sudoku_env/outputs/
+sudoku_env/*.egg-info/
+sudoku_env/.venv/
+

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenv-sudoku-env"
+version = "0.1.0"
+description = "Sudoku environment for OpenEnv"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openenv-core[core]>=0.2.3",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "httpx>=0.28.0",
+]
+
+[project.scripts]
+server = "sudoku_env.server.app:main"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["sudoku_env", "sudoku_env.server"]
+package-dir = { "sudoku_env" = ".", "sudoku_env.server" = "server" }
+
